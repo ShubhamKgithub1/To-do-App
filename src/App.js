@@ -26,7 +26,7 @@ function App() {
         {lists.length > 0 && (
           <div className="flex justify-start px-3">
             <button
-              className="px-[6px] sm:px-3 py-1 bg-white font-medium lg:font-semibold rounded-lg hover:bg-black hover:text-white transition-all transform active:scale-95"
+              className="px-[6px] sm:px-3 py-1 bg-white font-medium lg:font-semibold rounded-lg hover:bg-black hover:text-white transition-all transform active:scale-95 mb-5"
               onClick={clearList}
             >
               Clear List
