@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Header from "./component/Header";
+import AddItem from "./component/AddItem";
+import List from "./component/List";
 
 function App() {
+  const [lists, setLists] = useState([]);
+
+  const addItem = (item) => {
+    setLists([...lists, item]);
+  };
+
+  const removeItem = (index) => {
+    setLists(lists.filter((_, i) => i !== index));
+  };
+
+  const clearList = () => {
+    setLists([]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex w-[100vw] justify-center h-[100vh] items-center">
+      <div className="w-[90%] sm:w-[500px] md:w-[600px] lg:w-[700px] mx-auto bg-[#99f6e4] border-2 rounded-xl sm:rounded-2xl overflow-hidden border-black">
+        <Header />
+        <AddItem addItem={addItem} />
+        {lists.length > 0 && (
+          <div className="flex justify-start px-3">
+            <button
+              className="px-[6px] sm:px-3 py-1 border border-black bg-white font-medium lg:font-semibold rounded-lg hover:bg-black hover:text-white transition-all transform active:scale-95"
+              onClick={clearList}
+            >
+              Clear List
+            </button>
+          </div>
+        )}
+        <List list={lists} removeItem={removeItem} />
+      </div>
     </div>
   );
 }
