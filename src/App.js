@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./component/Header";
 import AddItem from "./component/AddItem";
 import List from "./component/List";
