@@ -19,7 +19,7 @@ const AddItem = ({ addItem }) => {
         }}
       />
       <button
-        className="bg-white px-5 py-1 border-[1px] rounded-lg border-black font-medium sm:font-medium md:font-semibold hover:bg-black hover:text-white transition-all transform active:scale-90"
+        className="bg-white px-5 py-2 rounded-lg font-medium sm:font-medium md:font-semibold hover:bg-black hover:text-white transition-all transform active:scale-90"
         onClick={handleClick}
       >
         Add
