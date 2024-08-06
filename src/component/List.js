@@ -23,7 +23,7 @@ const List = ({ list, removeItem, setList }) => {
   return (
     <div className="pt-6 text-black font-medium md:font-semibold text-base lg:text-base transition-all duration-500  ">
       <div className="overflow-x-auto max-h-[387px] md:max-h-[194px] lg:max-h-[322px]">
-        {list.length > 0 ? (
+        {list.length > 0 && (
           list.map((item, index) => (
             <div
               key={index}
@@ -45,8 +45,6 @@ const List = ({ list, removeItem, setList }) => {
               </button>
             </div>
           ))
-        ) : (
-          <p className="text-center pb-7">List is empty</p>
         )}
       </div>
       {isVisible && (
