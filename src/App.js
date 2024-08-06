@@ -33,7 +33,7 @@ function App() {
             </button>
           </div>
         )}
-        <List list={lists} removeItem={removeItem} />
+        <List list={lists} removeItem={removeItem} setList={setLists} />
       </div>
     </div>
   );
